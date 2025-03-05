@@ -73,7 +73,7 @@ namespace Game
         }
         IEnumerator BacktoGame()
         {
-            yield return new WaitForSeconds(1.2f);
+            yield return new WaitForSeconds(2f);
             uiRef.UpdateMainDisplay(gameContent.Contents[1]);
             uiRef.ShowInteractCanvas(!isGameFinished);
         }
