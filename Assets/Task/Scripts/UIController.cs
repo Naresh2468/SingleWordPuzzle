@@ -1,8 +1,6 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
-using TMPro;
-using System.Drawing;
 using UnityEngine.SceneManagement;
 
 namespace Game
@@ -16,7 +14,7 @@ namespace Game
         [SerializeField] private GameObject interactObject,RestartGame;
         [SerializeField] internal TextDisplay textDisplay;
         [SerializeField] private Button[] selectionButtons;
-        private void Start() => InitializeButtons();
+        private void Start() =>  InitializeButtons();
 
         public void UpdateProgress(float value) => StartCoroutine(ProgressAnimation(value));
 
@@ -57,7 +55,7 @@ namespace Game
             Button restartBtn = RestartGame.GetComponentInChildren<Button>();
             restartBtn.onClick.AddListener(RestartGameProcess);
         }
-        public void RestartGameProcess() => SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
+        public void RestartGameProcess() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
 }
